@@ -4,16 +4,16 @@
     <title>Project 2 Report</title>
     <style>
       :root {
-        --color-neutral-95: hsl(220 10% 95%);
-        --color-neutral-90: hsl(220 10% 90%);
-        --color-neutral-80: hsl(220 10% 80%);
-        --color-neutral-70: hsl(220 10% 70%);
-        --color-neutral-60: hsl(220 10% 60%);
-        --color-neutral-50: hsl(220 10% 50%);
-        --color-neutral-40: hsl(220 10% 40%);
-        --color-neutral-30: hsl(220 10% 30%);
-        --color-neutral-20: hsl(220 10% 20%);
-        --color-neutral-10: hsl(220 10% 10%);
+        --color-neutral-95: #fdf6e3;
+        --color-neutral-90: #f5eedd;
+        --color-neutral-80: #e5dcc4;
+        --color-neutral-70: #d4c5aa;
+        --color-neutral-60: #b8ab90;
+        --color-neutral-50: #9e927a;
+        --color-neutral-40: #83775f;
+        --color-neutral-30: #6b5f49;
+        --color-neutral-20: #554a37;
+        --color-neutral-10: #3e3427;
       }
 
       html {
@@ -34,7 +34,7 @@
       h6 {
         line-height: 1.1;
         font-weight: 600;
-        text-wrap: balance;
+        /* text-wrap: balance; */
       }
 
       h1,
@@ -103,7 +103,7 @@
 
       /* Figures */
 
-      figure {
+      /* figure {
         margin: 1em 0;
         padding: 0.5rem;
         margin-inline: -0.5em;
@@ -137,8 +137,50 @@
             );
           }
         }
+      } */
+    
+      /* Figures */
+      figure {
+        margin: 2em 0;
+        padding: 1rem;
+        background: white;
+        border: 1px solid var(--color-neutral-80);
+        border-radius: 0.5rem;
+        box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+    
+      figure img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        margin: 0 auto;
+        display: block;
+      }
+    
+      figcaption {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        text-align: left;
+        background: var(--color-neutral-95);
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        counter-increment: figure;
+        color: var(--color-neutral-30);
+      }
+    
+      figcaption::before {
+        content: 'Figure ' counter(figure) ': ';
+        font-weight: bold;
+        color: var(--color-neutral-40);
+      }
+    
+      figcaption a:not(:hover, :focus, :active) {
+        color: inherit;
+        text-decoration: underline dotted;
       }
     </style>
+    
   </head>
 
   <body>
@@ -148,50 +190,254 @@
         Persuasive or Deceptive Visualization?
       </h1>
 
-      <p><strong>Your Name</strong> — <em>Your UCSD Email Address</em></p>
+      <p><strong>Wanting Li</strong> — <em>ax010121@acsmail.ucsd.edu</em></p>
     </header>
 
     <main>
-      <h2>Proposition: [STATE PROPOSITION]</h2>
-
-      <section>
+      <h2>Proposition: <br>Wealthy nations are leading the fight against climate.</h2>
+      <p>Tips: 
+        <ul>
+          <li>I choose Climate Change Indicators dataset.</li>
+          <li>I choose G7(Group of Seven) to represent wealthy nations, which is Canada, France, 
+            Germany, Italy, Japan, the United Kingdom and the United States.
+            <ul>
+              <li>Score: 0</li>
+              <li>It's hard to define “wealthy nations”, so I choose this intergovernmental 
+                political and economic forum. Also, G7 members are major IMF advanced economies, 
+                which I think is a label of being a wealthy country too.</li>
+            </ul>
+            </li>
+        </ul>
+        
+        </p>
+      
+        <section>
         <h3>FOR the Proposition</h3>
+        <!-- <h4>Wealthy Nations Are Leading the Fight Against Climate Change: Emissions Are Falling as Green Investment Rises</h4> -->
 
         <figure>
-          <img src="IMAGE_FILENAME" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
+          <img src="for.png" alt="" />
+          <figcaption>This visualization shows that from 2012 to 2021, 
+            G7 countries have significantly increased their green bond issuance 
+            (log scale, left axis) while simultaneously reducing their average carbon emissions 
+            (right axis). The rising financial commitment to green projects and the corresponding 
+            downward trend in emissions supports the argument that wealthy nations are actively 
+            leading the fight against climate change through both investment and mitigation 
+            efforts.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
+          <li>Use of dual-axis to show green bond issuance and emissions decline
+            <ul>
+              <li>Score: +2</li>
+              <li>Rationale: This design simultaneously highlights the rise in green investments
+                 and the decline in emissions, visually reinforcing the proposition. I think it
+                 works great because it shows the bi-change of the two element which shows the 
+                 clear contribution of what wealthy nations have done to protect the climate.</li>
+              <li>Alternative considered:
+                I considered creating two separate plots — one showing green bond issuance and 
+                another showing emissions decline. This would have made each trend easier to 
+                analyze individually but would lose the immediate visual correlation between 
+                the two variables. Another alternative was plotting them together on the same 
+                axis, but their scales differ so much that one trend would visually dominate 
+                and obscure the other.</li>
+            </ul>
+          </li>
+          <li>Applying log scale and smoothing to emphasize clean trends
+            <ul>
+              <li>Score: -1</li>
+              <li>Rationale: The log scale for green bonds allows a wide range of values to be 
+                presented legibly, while smoothing the emissions line — achieved by averaging 
+                values over a three-year window — removes noise to make the decline clearer. 
+                These choices together help clarify the overall narrative without misrepresenting 
+                trends. The trends became visually clean and interpretable, making the argument 
+                immediately accessible. However, the early years with low green bond values looked 
+                very compressed even with log scaling. Although both log scaling and smoothing 
+                improve readability, I recognize that they can be considered mild deception 
+                techniques. They enhance the visibility of upward and downward trends, making 
+                the rise in green bond issuance and the decline in emissions appear more 
+                consistent and persuasive than they might seem with raw data.</li>
+              <li>Alternatives: I considered using linear scale and raw (unsmoothed) emissions data. 
+                However, the linear scale would have made recent green bond growth appear too 
+                extreme compared to earlier years, and the unsmoothed emissions line looked too 
+                noisy to visually support a "consistent decline" narrative.</li>
+            </ul>
+          </li>
+          <!-- <li>Bold, slanted title explicitly stating the argument
+            <ul>
+              <li>Score: -1</li>
+              <li>The title suggests causality between green bond growth and emission reductions, 
+                which is implied rather than proven, thereby influencing reader interpretation. 
+                What worked well: It framed the reader’s thinking from the beginning, making the 
+                chart more persuasive. What didn’t: It could cause skeptical readers to question 
+                credibility if they notice the causality gap.</li>
+              <li>Alternatives considered: I considered using a neutral title ("Green Bond 
+                Issuance and Emissions Trends") but decided the more assertive title better 
+                fit the task of persuasion.</li>
+            </ul>
+          </li> -->
+          <li>Highlighting G7 countries without showing non-G7 comparisons
+            <ul>
+              <li>Score: -1.5</li>
+              <li>Rationale: Focusing only on G7 may exaggerate their relative performance by 
+                omitting other groups' achievements or failures. This choice created a simple, 
+                uncluttered story that aligns closely with the proposition, making the 
+                visualization easier to read and more persuasive. I recognize that displaying 
+                only absolute data for G7, without providing a relative comparison to other 
+                groups, constitutes a mild deception technique. By selectively framing the 
+                narrative around a single group, the visualization amplifies their apparent 
+                leadership while implicitly downplaying the broader global progress or setbacks. 
+                Although this approach strengthened the persuasive effect, it risked 
+                oversimplifying a more complex reality.</li>
+              <li>Alternatives: I considered including global averages or a "rest of 
+                world" group, but it would have introduced ambiguity and potentially weakened 
+                the intended persuasive effect.</li>
+            </ul>
+          </li>
+          <li>Clear visual distinction between investment and emissions via color
+            <ul>
+              <li>Score: +2</li>
+              <li>Rationale: Strong contrasting colors were used to help readers distinguish the two 
+                narratives clearly. The separation made the chart easy to read and minimized 
+                cognitive load. The colors could be perceived as arbitrary and may not carry 
+                inherent semantic meaning (e.g., green might be more directly associated with 
+                environmental issues, which might be more matched to the theme).</li>
+              <li>Alternatives: I briefly considered using shades of green, but they 
+                would have been too similar and visually confusing for a two-axis chart.</li>
+            </ul>
+          </li>
         </ul>
       </section>
 
       <section>
         <h3>AGAINST the Proposition</h3>
+        <!-- <h4>Wealthy nations outsource emissions through high hidden CO<sub>2</sub> imports, not true climate leadership.</h4> -->
 
         <figure>
-          <img src="IMAGE_FILENAME" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
+          <img src="against1.png" alt="" />
+          <figcaption>This figure is composed of two combined plots. The upper plot displays 
+            the average cumulative CO₂ emissions per country from 1970 to 2023, highlighting 
+            the historical responsibility that wealthy nations bear for driving climate change. 
+            The lower plot shows the hidden carbon emissions embedded in international trade 
+            from 1995 to 2021, illustrating how wealthy nations have reduced their domestic 
+            emissions partly by outsourcing high-carbon industries to other countries and 
+            importing carbon-intensive goods instead. Together, these visualizations expose 
+            the hypocrisy underlying claims of climate leadership by wealthy nations, emphasizing 
+            both their historical accountability and ongoing carbon displacement practices.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
+          <li>Concatenation of two related plots to build a comprehensive critique
+            <ul>
+              <li>Score: +2</li>
+              <li>Rationale: Combining cumulative emissions with hidden CO₂ imports emphasizes 
+                both historical and ongoing contributions to climate change. Together, the two 
+                plots made the argument multifaceted and difficult to dismiss.
+                However, presenting two plots in one space risks overwhelming or confusing 
+                some viewers.</li>
+              <li>Alternatives: I considered using only the hidden imports chart, but decided 
+                that cumulative responsibility was too important to omit for a full critique.</li>
+            </ul>
+          </li>
+          <li>Stacked bar chart to emphasize G7 dominance in imported emissions
+            <ul>
+              <li>Score: +1.5</li>
+              <li>Rationale: The stacked format clearly highlights the consistently larger hidden 
+                imports from G7 countries. It made the G7's contribution 
+                visually dominant at a glance, without needing detailed explanation.
+                But some readers might misinterpret the stacking as direct emissions, 
+                not imported emissions, if they skim quickly.</li>
+              <li>Alternatives: I thought about using side-by-side bars but found stacking better 
+                conveyed cumulative visual dominance over time. Also, it straight-forwardly 
+                shows the high proportion 
+                of wealthy country.</li>
+            </ul>
+          </li>
+          <li>Judgmental framing in the title
+            <ul>
+              <li>Score: -0.5</li>
+              <li>Rationale: The critical wording ("not true climate leadership") immediately 
+                positions the viewer to doubt G7 actions. It aligned the reader 
+                emotionally with the intended argument early.
+                But it could appear too biased, potentially alienating skeptical audiences.</li>
+              <li>Alternatives: I considered a neutral title ("G7 Hidden Emissions and Historical 
+                Responsibility") but found it lacked rhetorical strength for persuasive goals.</li>
+            </ul>
+          </li>
+          <li>Use per country normalization instead of per capita normalization
+            <ul>
+              <li>Score: -1.5</li>
+              <li>Rationale: Although I did not perform a full normalization by population size, 
+                I recognize that adjusting for population might lead to different results — 
+                the G7's share of responsibility could either appear smaller or, in some cases, 
+                even larger. Regardless of the direction, per capita normalization would more 
+                accurately reflect the true scale of responsibility relative to population, 
+                compared to the current per-country averaging method. Using absolute averages 
+                likely exaggerates G7 culpability by overlooking differences in country size and 
+                economic scale.</li>
+              <li>Alternatives: I considered showing per capita or GDP-normalized emissions, 
+                but they would have diminished the starkness of the contrast. Moreover, 
+                incorporating population data would require introducing an additional dataset, 
+                which would increase the complexity of the visualization and potentially dilute 
+                the immediate persuasive impact.</li>
+            </ul>
+          </li>
+          <li>Centering the percentage label in the cumulative emissions bar
+            <ul>
+              <li>Score: +1</li>
+              <li>Rationale: Explicitly placing the large percentage on the bar draws immediate 
+                attention to historical emissions dominance. It made the 
+                argument extremely clear in one glance without cluttering the visual.
+                But it might oversimplify a complex historical trend by reducing it to 
+                a single percentage.</li>
+              <li>Alternatives:I considered showing detailed year-by-year breakdowns, but the 
+                cleaner single-percentage summary was far more persuasive.</li>
+            </ul>
+          </li>
         </ul>
       </section>
 
       <section>
         <h2>Final Reflection</h2>
 
-        <p>[WRITE FINAL REFLECTION PARAGRAPHS HERE.]</p>
+        <p>One of the most difficult parts of the design process was selecting a main 
+          proposition and then generating both for and against arguments — and supporting data — 
+          for both sides. With so many CSV files and columns available, it was challenging 
+          to filter and extract subsets of data that could meaningfully reinforce both the 
+          supportive and opposing viewpoints. It was also nontrivial to determine which 
+          types of charts, such as line graphs versus bar charts, would most effectively 
+          communicate each side's narrative. Choosing the appropriate chart type directly 
+          influenced the perceived strength and clarity of the argument, making this a 
+          critical and sometimes difficult decision.
+          <br>
+          <br>
+          An aspect that was somewhat more straightforward — yet still presented subtle 
+          challenges — was color selection. On the one hand, I found it easier because 
+          I naturally gravitate toward certain color palettes, which provided a starting point. 
+          However, it was difficult to strike the right balance: selecting colors that offered 
+          sufficient contrast to separate key elements, while still maintaining visual harmony 
+          and avoiding distracting clashing tones. What surprised me most throughout this process 
+          was realizing just how flexibly visualizations can be crafted to persuasively support 
+          completely opposite viewpoints. With deliberate framing and design choices, both the 
+          affirmative and opposing cases could be made highly convincing, even when drawn from 
+          the same overall data source.
+          <br>
+          <br>
+          Through this exercise, I have come to define "ethical analysis and visualization" as 
+          the responsibility to accurately reflect underlying data patterns, even while 
+          acknowledging that framing decisions will inevitably shape interpretation. Ethical 
+          visualizations strive for clarity without obscuring critical context. In distinguishing 
+          between “acceptable” persuasive choices and “misleading” ones, I believe the boundary 
+          lies in whether the visualization fundamentally distorts or omits key information that 
+          would alter a viewer's understanding. Strategic emphasis and careful selection are 
+          acceptable; deliberate concealment or manipulation crosses the line into unethical 
+          territory. This project highlighted how small decisions — from smoothing data to 
+          omitting certain comparisons — can tilt perceptions, and it deepened my appreciation 
+          for the nuanced balance between persuasion and integrity in data storytelling.</p>
       </section>
     </main>
   </body>
