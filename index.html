@@ -270,6 +270,22 @@
                 noisy to visually support a "consistent decline" narrative.</li>
             </ul>
           </li>
+          <li><b>Calculated field: Aggregated G7 average emissions per year</b>
+            <ul>
+              <li>Score: +2</li>
+              <li>Rationale: The blue line represents not a raw dataset column but a derived
+                 metric — the average of all G7 countries' emissions for each year. This required 
+                 grouping the data by country, aggregating by year, and then calculating the 
+                 per-year mean across countries. By creating this calculated field, the chart 
+                 moves from granular, country-level fluctuations to a more cohesive group-level 
+                 narrative, supporting the idea of collective G7 leadership.</li>
+              <li>Alternatives: I considered showing emissions for each G7 country as 
+                separate lines, but this would have made the chart cluttered and harder to 
+                interpret. Using a group average kept the chart clean and helped reinforce a 
+                unified visual message of emissions decline over time.</li>
+            </ul>
+          </li>
+          
           <!-- <li>Bold, slanted title explicitly stating the argument
             <ul>
               <li>Score: -1</li>
@@ -349,19 +365,45 @@
                 that cumulative responsibility was too important to omit for a full critique.</li>
             </ul>
           </li>
-          <li><b>Stacked bar chart to emphasize G7 dominance in imported emissions</b>
+          <li><b>Advanced data transformations through groupings and calculated fields</b>
+            <ul>
+              <li>Score: +2</li>
+              <li>Rationale: The figure incorporates advanced transformations by grouping 
+                countries into G7 and Others, and calculating both average cumulative emissions 
+                per country (1970-2023) and average hidden CO₂ imports per country over time. 
+                These derived metrics are not directly available in the raw dataset and required 
+                summarizing, aggregating, and computing fields across multiple dimensions. 
+                This helped elevate the argument from individual country data to structural 
+                inequalities, making the visualization both analytically meaningful and persuasive.</li>
+              <li>Alternatives: I considered using raw country-level data without grouping or 
+                calculation, but it was noisy and harder to interpret. Grouping and summarizing 
+                by country groups clarified the narrative and made the contrasts more apparent 
+                without overwhelming the reader.</li>
+            </ul>
+          </li>
+          
+          <li><b>Stacked bar chart to emphasize G7 dominance in imported emissions and centering the percentage label in the cumulative emissions bar</b>
             <ul>
               <li>Score: +1.5</li>
-              <li>Rationale: The stacked format clearly highlights the consistently larger hidden 
-                carbon imports of G7 countries. It made the G7's contribution 
-                visually dominant at a glance, without needing detailed explanation.
-                But some readers might misinterpret the stacking as direct emissions, 
-                not imported emissions, if they skim quickly.</li>
-              <li>Alternatives: I thought about using side-by-side bars but found stacking better 
-                conveyed cumulative visual dominance over time. Also, it straight-forwardly 
-                shows the high proportion 
-                of wealthy country.</li>
+              <li>Rationale: The stacked bar chart clearly emphasizes the consistently 
+                higher hidden carbon imports of G7 countries, making their contribution visually 
+                dominant at a glance without requiring much explanation. However, there is a 
+                risk that some viewers may misinterpret the stacking as representing direct 
+                emissions rather than imported ones if they only skim the chart.  
+              Additionally, centering the large percentage label (66.1%) in the cumulative 
+              emissions bar immediately draws attention to the G7's historical responsibility. 
+              This makes the argument visually compelling in a single glance while keeping the 
+              design clean and uncluttered. On the other hand, summarizing a decades-long trend 
+              with a single percentage may oversimplify the historical context and obscure 
+              regional variations.</li>
+              <li>Alternatives: I considered using side-by-side bars instead 
+                of stacking, but the stacked format better conveyed the cumulative dominance of 
+                G7 countries over time. I also thought about displaying more detailed 
+                year-by-year breakdowns of cumulative emissions, but ultimately chose the 
+                single-percentage summary because it was more visually striking and persuasive.</li>
             </ul>
+          </li>
+          
           </li>
           <li><b>Judgmental framing in the title</b>
             <ul>
@@ -392,7 +434,7 @@
                 the immediate persuasive impact.</li>
             </ul>
           </li>
-          <li><b>Centering the percentage label in the cumulative emissions bar</b>
+          <!-- <li><b>Centering the percentage label in the cumulative emissions bar</b>
             <ul>
               <li>Score: +2</li>
               <li>Rationale: Explicitly placing the large percentage on the bar draws immediate 
@@ -403,7 +445,7 @@
               <li>Alternatives:I considered showing detailed year-by-year breakdowns, but the 
                 cleaner single-percentage summary was far more persuasive.</li>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </section>
 
